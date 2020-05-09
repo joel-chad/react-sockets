@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a websockets test app server",
+  "main": "index.js",
+  "repository": "https://gitlab.com/chadjnr/react-sockets.git",
+  "author": "Joel Chadambuka",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.3"
+  }
+}
