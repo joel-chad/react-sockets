@@ -11,7 +11,6 @@ const io = socketIO(server);
 
 io.on('connection', (socket)=>{
     console.log('Connected')
-
     socket.on('disconnect', ()=>{
         console.log('user disconnected');
     })
