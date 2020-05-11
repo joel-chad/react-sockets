@@ -12,6 +12,13 @@
  */
  @tailwind base;
 
+
+ @font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2") format("truetype");  
+  font-weight: 400;
+  /* font-weight: normal; */
+}
  /**
   * This injects any component classes registered by plugins.
   *
@@ -59,3 +66,7 @@
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
+
+  .App{
+    font-family: "Inter";
+  }
