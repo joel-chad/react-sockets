@@ -8,7 +8,7 @@ class Navbar extends Component {
         return ( 
             <nav className="relative select-none lg:h-16 bg-gray-900 lg:flex lg:items-stretch w-full">
                 <div className="flex flex-no-shrink items-stretch ">
-                <div className='pt-2 pr-1'>
+                <div className='pt-2'>
                 <Link to='/'><span> <img className="h-8 w-10" src={Illustrator} alt="Workflow logo" /></span></Link> 
                 </div>
                     <Link to="/" className="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-700">Home</Link>

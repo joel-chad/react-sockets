@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Name from './Name'
 import Chat from './Chat'
-import socketIoClient from 'socket.io-client'
+import {socket} from "../service/socket";
 
 class Activity extends Component {
     state = { 
         name: '',
         stage: 1,
-        message: '',
-        server: 'localhost:5000'
+        message: ''
      }
 
      onChange=(e)=>{
@@ -24,9 +23,10 @@ class Activity extends Component {
 
     onClick = ()=>{
         const {message} = this.state;
+        const sender = this.state.name
         if(message.length){
-            const socket = socketIoClient(this.state.server)
-            socket.emit('message', this.state.message)
+            socket.emit('message', message, sender)
+            console.log(message)
          }
          this.setState({message: ''})
     }
@@ -37,7 +37,7 @@ class Activity extends Component {
             case 1:
                 return <Name onChange={this.onChange} next={this.next}/>;
             case 2: 
-                return <Chat onClick={this.onClick} server={this.state.server} message={this.state.message} name={this.state.name} onChange={this.onChange} next={this.next}/>;
+                return <Chat onClick={this.onClick} message={this.state.message} name={this.state.name} onChange={this.onChange} next={this.next}/>;
             default:
                 return <Name onChange={this.onChange} next={this.next}/>;
         }
